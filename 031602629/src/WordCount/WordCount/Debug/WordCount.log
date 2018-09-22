@@ -1,6 +1,2 @@
-﻿  WordCount.cpp
-e:\大学\软件工程\personproject-c2\031602629\src\wordcount\wordcount\wordcount.cpp(35): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
-e:\大学\软件工程\personproject-c2\031602629\src\wordcount\wordcount\wordcount.cpp(15): warning C4101: “c”: 未引用的局部变量
-  WordCount.vcxproj -> E:\大学\软件工程\PersonProject-C2\031602629\src\WordCount\Debug\WordCount.exe
+﻿  WordCount.vcxproj -> E:\大学\软件工程\PersonProject-C2\031602629\src\WordCount\Debug\WordCount.exe
   WordCount.vcxproj -> E:\大学\软件工程\PersonProject-C2\031602629\src\WordCount\Debug\WordCount.pdb (Partial PDB)

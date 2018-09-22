@@ -11,15 +11,10 @@ using namespace std;
 void tjb::readwj(FILE *fp)
 {
 	int c;
-	int t = 0;
 	while ((c = fgetc(fp)) != EOF)
 	{
 		wj += c;
-		t = 1;
 	}
-	if (t == 1)
-		lines = 1;
-		
 }
 int tjb::getcharacters()
 {
@@ -46,7 +41,7 @@ void tjb::csort()
 	for (i = 0;i < end && i < 10;i++)
 		for (j = i + 1;j < end;j++)
 		{
-			if (v[i].second > v[j].second)
+			if (v[i].second < v[j].second)
 			{
 				swap(v[i], v[j]);
 			}
@@ -114,19 +109,24 @@ int tjb::countzf()
 }
 int tjb::counths()
 {
-	int count;
-	int c;
+	int count=0;
+	int c,cc='\n';
 	int n = wj.size();
+	/*
 	if (lines == 1)
 		count = 1;
 	else if (lines == 0)
 		count = 0;
+	*/
 	for(int i=0;i<n;i++)
 	{
 		c = wj[i];
-		if (c == '\n')
+		if (c == '\n'&&cc!='\n')
 			count++;
+		cc = c;
 	}
+	if (wj[n - 1] != '\n')
+		count++;
 	lines = count;
 	return count;
 }
@@ -156,6 +156,7 @@ int tjb::countdc()
 			if (t == 0 && !((c >= 'A'&&c <= 'Z') || (c >= 'a'&&c <= 'z')))
 			{
 				count = 0;
+				s = "";
 				p = 0;
 			}
 			//设置p标志，是为了给单词的计数做起始
@@ -187,6 +188,7 @@ int tjb::countdc()
 					mm[s]++;
 				s = "";
 				t = 0;
+				count = 0;
 			}
 		}
 	}
